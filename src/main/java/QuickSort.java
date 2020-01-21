@@ -4,7 +4,7 @@ public class QuickSort {
         quickSort(a);
     }
 
-    public static void quickSort(int a[]) {
+    public static void quickSort(int[] a) {
         if (a == null) return;
         if (a.length < 2) return;
         quickSort(a, 0, a.length);
@@ -13,7 +13,7 @@ public class QuickSort {
         }
     }
 
-    public static void quickSort(int a[], int start, int end) {
+    private static void quickSort(int[] a, int start, int end) {
         if (2 == (end - start)) {
             if (a[start + 1] < a[start]) {
                 swap(a, start, start + 1);
@@ -29,7 +29,7 @@ public class QuickSort {
         //the third (base) case: 0 or 1 item to sort!
     }
 
-    private static int partition(int a[], int start, int end) {
+    private static int partition(int[] a, int start, int end) {
         int pivot = a[start];//let's say we choose the first element as pivot.
         int bigStart = (start + 1);
 
@@ -46,7 +46,7 @@ public class QuickSort {
         return bigStart - 1;
     }
 
-    private static void swap(int a[], int i, int j) {
+    private static void swap(int[] a, int i, int j) {
         int temp = a[i];
         a[i] = a[j];
         a[j] = temp;
